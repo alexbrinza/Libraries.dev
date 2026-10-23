@@ -1,11 +1,11 @@
 ---
 name: libraries-dev
-description: Use the Libraries.dev UI effect libraries correctly and find where they fit in a project. Covers Border beam (border-beam), Thinking orbs (thinking-orbs), Gooey (liquid-gooey), Voice (voice-glow), Bot avatars (bot-avatars), Liquid metal (metal-fx) and Image (img-fx). Use when adding an AI thinking or loading state, a glowing or animated border around an input or card, a voice or microphone visualizer, an animated bot or agent avatar, a liquid metal button or badge, an image generation placeholder or reveal, a gooey blob or liquid menu, or when the user mentions libraries.dev or any of these packages. Also "review my project for libraries.dev", "where could I use these effects", and the commands libraries reveal, libraries review, libraries apply.
+description: Use the Libraries.dev UI effect libraries correctly and find where they fit in a project. Covers Border beam (border-beam), Thinking orbs (thinking-orbs), Gooey (liquid-gooey), Voice (voice-glow), Bot avatars (bot-avatars), Liquid metal (metal-fx), Image (img-fx) and Inkjet (inkjet-fx). Use when adding an AI thinking or loading state, streamed AI text that should print in, a typewriter effect, a glowing or animated border around an input or card, a voice or microphone visualizer, an animated bot or agent avatar, a liquid metal button or badge, an image generation placeholder or reveal, a gooey blob or liquid menu, or when the user mentions libraries.dev or any of these packages. Also "review my project for libraries.dev", "where could I use these effects", and the commands libraries reveal, libraries review, libraries apply.
 ---
 
 # Libraries.dev
 
-Seven UI effect libraries for AI-era interfaces, each an npm package with a
+Eight UI effect libraries for AI-era interfaces, each an npm package with a
 React component. This skill knows what each one is for, how to install it,
 and the options its libraries.dev detail page offers. Read the library's
 reference file before writing any code for it; never guess a prop.
@@ -21,6 +21,7 @@ reference file before writing any code for it; never guess a prop.
 | **Bot avatars** | `bot-avatars` | `BotAvatar` | Animated bot characters with idle and working states for agents and assistants. | [05-bot-avatars.md](references/05-bot-avatars.md) |
 | **Liquid metal** | `metal-fx` | `MetalFx` | A real-time liquid metal material for buttons, badges, icons and text. | [06-metal-fx.md](references/06-metal-fx.md) |
 | **Image** | `img-fx` | `ImageGeneration` | Image generation placeholders and reveals while an image is being made or loaded. | [07-img-fx.md](references/07-img-fx.md) |
+| **Inkjet** | `inkjet-fx` | `InkText`, `InkImage` | Streamed AI text and generated images that print themselves in ink drops, then are plain text and a plain image. | [08-inkjet-fx.md](references/08-inkjet-fx.md) |
 
 Docs and live playgrounds: https://libraries.dev (one detail page per library).
 
@@ -52,15 +53,20 @@ toggles and route changes are short; if you cannot tell, say so):
 - **Anything voice or recording related** → **Voice**.
 - **Anything avatar related for a bot or agent** → **Bot avatars**, state from
   the agent's real status.
-- **An image being generated, uploaded or lazy-loaded** → **Image**.
+- **An image being generated, uploaded or lazy-loaded** → **Image**. For a
+  generated image in a product that already prints its replies with Inkjet,
+  **Inkjet** `InkImage` is the alternative; offer both, never both on one card.
+- **A streamed AI reply, or generated copy that appears in place** → **Inkjet**
+  `InkText`, with `streaming` from the real stream state and `animate={false}`
+  for history.
 - **Shapes or images that should merge, melt or morph** (gooey plus menu,
   blob loader, image melt) → **Gooey**.
 - **No clear match** → run `libraries reveal` and let the user pick. Do not
   force an effect.
 
 When two fit the same spot, prefer the cheaper one: Thinking orbs and Border
-beam are light; Voice, Bot avatars and Gooey are moderate; Liquid metal and
-Image run WebGL. Liquid metal: every metal element on a page shares one
+beam are light; Voice, Bot avatars and Gooey are moderate; Liquid metal,
+Image and Inkjet run WebGL (Inkjet only while it prints, then it is plain text). Liquid metal: every metal element on a page shares one
 colour, so pick one preset for the page, and keep metal elements apart
 (a headline and a CTA in the same header is fine; two metal buttons side by
 side is not).
@@ -72,7 +78,7 @@ Three verbs, all prefixed `libraries` so they never collide with other skills.
 ### libraries reveal — list the libraries
 
 Triggers: `libraries reveal`, "what's in libraries.dev", "list the libraries".
-Print the seven rows of the quick reference as a numbered list: name, one
+Print the eight rows of the quick reference as a numbered list: name, one
 line, package. No project access.
 
 ### libraries review — find where each library fits
@@ -86,7 +92,7 @@ Triggers: `libraries review`, "review my project for libraries.dev",
    a library out (no React, a no-WebGL target) and say so.
 2. **Scan for fit signals.** Each reference ends with "Detecting a fit in a
    codebase": the component names, class names, copy and patterns that point
-   at that library. Search for all seven sets. Typical hits: spinners and
+   at that library. Search for all eight sets. Typical hits: spinners and
    "Thinking…"/"Generating…" copy, chat inputs and prompt boxes, `getUserMedia`
    or mic buttons, avatar components for bots or agents, image placeholders
    and skeletons around generated images, primary CTAs and "Pro" badges,
