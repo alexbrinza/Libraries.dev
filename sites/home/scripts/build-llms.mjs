@@ -30,6 +30,7 @@ const LIBS = [
   { file: "05-bot-avatars.md", pkg: "bot-avatars", name: "Bot Avatars", page: "bots", line: "Animated avatars for AI agents and chatbots: plush 3D characters with idle, working and sleeping states." },
   { file: "06-metal-fx.md", pkg: "metal-fx", name: "Liquid Metal", page: "metal", line: "Real-time WebGL liquid metal material for buttons, badges, icons and headline text." },
   { file: "07-img-fx.md", pkg: "img-fx", name: "Image FX", page: "image", line: "WebGL loading and reveal effect for AI image generation, uploads and lazy-loaded images." },
+  { file: "08-inkjet-fx.md", pkg: "inkjet-fx", name: "Inkjet", page: "inkjet", line: "Streaming text and images that print themselves in ink drops, for AI replies and image generation." },
 ];
 
 const available = new Set(readdirSync(refs));
@@ -46,7 +47,7 @@ for (const lib of LIBS) {
 
 const index = `# Libraries.dev
 
-> Seven open-source (MIT) React UI effect libraries for AI interfaces, each an npm package with one component: animated borders, thinking indicators, liquid effects, voice visualizers, bot avatars, liquid metal and image-generation loaders. Built to be added by coding agents.
+> Eight open-source (MIT) React UI effect libraries for AI interfaces, each an npm package with one component: animated borders, thinking indicators, liquid effects, voice visualizers, bot avatars, liquid metal, image-generation loaders and ink-drop streaming text. Built to be added by coding agents.
 
 Install a library with \`npm install <package>\` and read its reference before writing code; never guess a prop. Placement rules: no effect for waits under 2 seconds; Thinking Orbs for waits of 2 seconds or more; add Border Beam on the working element for waits over 3 seconds; never put two effects on the same or neighbouring elements.
 
@@ -56,7 +57,7 @@ ${LIBS.map((l) => `- [${l.name} (${l.pkg})](${SITE}/llms/${l.pkg}.md): ${l.line}
 
 ## For coding agents
 
-- [Agent skill](${SITE}/skill): teaches Claude Code, Cursor, Codex and other agents all seven libraries and where each fits. Install with \`npx libraries-dev skill\` or \`npx skills add Jakubantalik/Libraries.dev\`.
+- [Agent skill](${SITE}/skill): teaches Claude Code, Cursor, Codex and other agents all eight libraries and where each fits. Install with \`npx libraries-dev skill\` or \`npx skills add Jakubantalik/Libraries.dev\`.
 - [How to use](${SITE}/how-to-use): copy a library's prompt into your agent and tune it.
 - [All references in one file](${SITE}/llms-full.txt)
 

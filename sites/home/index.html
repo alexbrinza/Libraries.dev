@@ -25,11 +25,11 @@
   <title>Libraries.dev: High-crafted UI libraries for AI agents</title>
   <meta
     name="description"
-    content="Seven open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal and image loaders. Install from npm."
+    content="Eight open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal, image loaders and ink-drop streaming text. Install from npm."
   />
   <meta
     name="keywords"
-    content="react ui effects, ai ui components, animated border, ai thinking indicator, voice visualizer, bot avatar, liquid metal, image loader, ui libraries"
+    content="react ui effects, ai ui components, animated border, ai thinking indicator, voice visualizer, bot avatar, liquid metal, image loader, streaming text effect, ui libraries"
   />
   <meta name="author" content="Libraries.dev" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -52,7 +52,7 @@
   <meta property="og:url" content="https://libraries.dev/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Libraries.dev: High-crafted UI libraries for AI agents" />
-  <meta property="og:description" content="Seven open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal and image loaders. Install from npm." />
+  <meta property="og:description" content="Eight open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal, image loaders and ink-drop streaming text. Install from npm." />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:image" content="https://libraries.dev/assets/og-image.jpg" />
@@ -60,7 +60,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:image" content="https://libraries.dev/assets/og-image.jpg" />
   <meta name="twitter:title" content="Libraries.dev: High-crafted UI libraries for AI agents" />
-  <meta name="twitter:description" content="Seven open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal and image loaders. Install from npm." />
+  <meta name="twitter:description" content="Eight open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal, image loaders and ink-drop streaming text. Install from npm." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -761,7 +761,7 @@
         "@id": "https://libraries.dev/#website",
         "url": "https://libraries.dev/",
         "name": "Libraries.dev",
-        "description": "Seven open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal and image loaders. Install from npm.",
+        "description": "Eight open-source React effects for AI interfaces: animated borders, thinking indicators, voice visualizers, bot avatars, liquid metal, image loaders and ink-drop streaming text. Install from npm.",
         "inLanguage": "en"
       },
       {
@@ -826,6 +826,12 @@
             "position": 8,
             "url": "https://libraries.dev/image",
             "name": "Image FX"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "url": "https://libraries.dev/inkjet",
+            "name": "Inkjet"
           }
         ]
       }
@@ -1299,7 +1305,7 @@
             <span class="t-acc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 6.5L8 10.5L12 6.5" /></svg></span>
           </button>
           <div class="t-acc-panel"><div class="t-acc-panel-inner">
-            <p>Yes. All five libraries (Beam, Orb, Gooey, Metal and Image) are MIT-licensed and free on npm. Install any of them with <code>npm install border-beam</code>, <code>thinking-orbs</code>, <code>liquid-gooey</code>, <code>metal-fx</code> or <code>img-fx</code>.</p>
+            <p>Yes. All six libraries (Beam, Orb, Gooey, Metal, Image and Inkjet) are MIT-licensed and free on npm. Install any of them with <code>npm install border-beam</code>, <code>thinking-orbs</code>, <code>liquid-gooey</code>, <code>metal-fx</code>, <code>img-fx</code> or <code>inkjet-fx</code>.</p>
           </div></div>
         </div>
 
@@ -1368,6 +1374,7 @@
             <a href="/bots.html">Bot avatars</a>
             <a href="/metal.html">Metal</a>
             <a href="/image.html">Image</a>
+            <a href="/inkjet.html">Inkjet</a>
           </div>
           <div class="footer-col">
             <p class="footer-col-title">Product</p>
@@ -1387,7 +1394,7 @@
       </div>
       <div class="footer-byline">
         <p class="footer-credit"><span class="footer-muted">Created by</span><a class="footer-name" href="https://x.com/jakubantalik" target="_blank" rel="noopener noreferrer">Jakub Antalik</a></p>
-        <p class="footer-thanks">Made with help from <a href="https://x.com/a_brinza" target="_blank" rel="noopener noreferrer">Alexandr Brinza</a> (Orbs) and <a href="https://x.com/mpetercak" target="_blank" rel="noopener noreferrer">Martin Petercak</a> (Metal)</p>
+        <p class="footer-thanks">Made with help from <a href="https://x.com/a_brinza" target="_blank" rel="noopener noreferrer">Alexandr Brinza</a> (Orbs and Inkjet) and <a href="https://x.com/mpetercak" target="_blank" rel="noopener noreferrer">Martin Petercak</a> (Metal)</p>
       </div>
     </footer>
   </main>
@@ -1413,12 +1420,12 @@
        * from before the first publish to today. That endpoint allows at most
        * 18 months per call, hence the chunking; days before a package existed
        * come back as zero, which is why one shared start date works for all
-       * five. */
+       * of them, and why a package not on npm yet just adds nothing. */
       var badge = document.getElementById("installs-count");
       if (!badge) return;
       var KEY = "ldev:installs-total";
       var TTL = 60 * 60 * 1000;
-      var PKGS = ["border-beam", "thinking-orbs", "liquid-gooey", "metal-fx", "img-fx"];
+      var PKGS = ["border-beam", "thinking-orbs", "liquid-gooey", "metal-fx", "img-fx", "inkjet-fx"];
       var START = "2026-01-01"; // earlier than the first package (2026-04-12)
       var MAX_MONTHS = 17;      // one under npm's limit, to stay clear of edges
 

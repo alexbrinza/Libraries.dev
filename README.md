@@ -1,6 +1,6 @@
 # Libraries.dev
 
-**High-crafted UI libraries for AI agents.** Seven React libraries for the effects that make an interface feel alive: a beam of light travelling a card's border, orbs that think while a model works, bot avatars with living faces, shapes that merge like liquid, a glow that rises with your voice, brushed metal that catches the light, and an image loader that dissolves a pixel mosaic into a real photo.
+**High-crafted UI libraries for AI agents.** Eight React libraries for the effects that make an interface feel alive: a beam of light travelling a card's border, orbs that think while a model works, bot avatars with living faces, shapes that merge like liquid, a glow that rises with your voice, brushed metal that catches the light, an image loader that dissolves a pixel mosaic into a real photo, and streaming text and images that print themselves in tiny ink drops.
 
 Each one installs from npm and drops into your app as a single component that wraps the element you already have. Your markup keeps its semantics, the effect renders around or behind it, and the whole thing is tuned by props rather than hand-written WebGL.
 
@@ -13,6 +13,7 @@ Each one installs from npm and drops into your app as a single component that wr
 | [Voice](packages/voice-glow) | A glow that rises with your voice from the bottom of a chat input or phone screen | `npm install voice-glow` | [libraries.dev/voice](https://libraries.dev/voice) |
 | [Metal](packages/metal-fx) | Liquid metal for buttons, icons, text and badges, with reflections and cursor light | `npm install metal-fx` | [libraries.dev/metal](https://libraries.dev/metal) |
 | [Image](packages/img-fx) | A loader that becomes the image — a WebGL pixel mosaic that settles into the picture | `npm install img-fx` | [libraries.dev/image](https://libraries.dev/image) |
+| [Inkjet](packages/inkjet-fx) | Streaming text and images that print themselves in tiny ink drops, for AI replies and image generation | `npm install inkjet-fx` | [libraries.dev/inkjet](https://libraries.dev/inkjet) |
 
 Try each one on [libraries.dev](https://libraries.dev): a live preview to play with, the install command, the usage code, and a playground that copies the exact configuration.
 
@@ -27,7 +28,7 @@ Every library ships as a prompt. Copy it, paste it into your coding agent, and m
 Or the plain way:
 
 ```bash
-npm install border-beam   # or thinking-orbs, bot-avatars, liquid-gooey, voice-glow, metal-fx, img-fx
+npm install border-beam   # or thinking-orbs, bot-avatars, liquid-gooey, voice-glow, metal-fx, img-fx, inkjet-fx
 ```
 
 ```tsx
@@ -63,7 +64,7 @@ npm run dev -w @sites/home      # libraries.dev with every page and the Studio
 npm run typecheck               # every workspace
 ```
 
-The home site imports the built packages, so build a library (`npm run build:beam`, `build:orbs`, `build:gooey`, `build:voice`, `build:metal`, `build:image`) before its page or bench. The standalone demos (`@sites/beam`, `@sites/gooey`, `@sites/orbs`) alias their library to its source and hot-reload without a rebuild.
+The home site imports the built packages, so build a library (`npm run build:beam`, `build:orbs`, `build:gooey`, `build:voice`, `build:metal`, `build:image`, `build:inkjet`) before its page or bench. The standalone demos (`@sites/beam`, `@sites/gooey`, `@sites/orbs`) alias their library to its source and hot-reload without a rebuild.
 
 ## Releasing
 
