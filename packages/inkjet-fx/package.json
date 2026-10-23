@@ -1,0 +1,76 @@
+{
+  "name": "inkjet-fx",
+  "version": "0.1.0",
+  "description": "Streaming text and images that print themselves in ink drops, for AI replies and image generation in React",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jakubantalik/Libraries.dev.git",
+    "directory": "packages/inkjet-fx"
+  },
+  "homepage": "https://libraries.dev/inkjet",
+  "bugs": {
+    "url": "https://github.com/Jakubantalik/Libraries.dev/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.7.0"
+  },
+  "keywords": [
+    "react",
+    "webgl",
+    "ai",
+    "llm",
+    "streaming",
+    "text",
+    "typewriter",
+    "loader",
+    "image",
+    "animation",
+    "ink"
+  ],
+  "author": "Alexandr Brinza (https://x.com/a_brinza)",
+  "contributors": [
+    "Jakub Antalik (https://x.com/jakubantalik)"
+  ],
+  "license": "MIT"
+}
